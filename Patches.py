@@ -1760,6 +1760,9 @@ def patch_rom(spoiler:Spoiler, world:World, rom:Rom):
     save_context.equip_current_items(world.starting_age)
     save_context.write_save_table(rom)
 
+    # Force Hi Poly Link Model
+    rom.write_byte(0xBE608B, 0x00)
+
     return rom
 
 
